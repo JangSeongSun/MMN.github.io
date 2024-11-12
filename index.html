@@ -66,6 +66,7 @@
                 To save the image,<br>please long-press it and select Save Image.
             </div>
             <button onclick="document.getElementById('screenshotDiv').style.display = 'none';" style="position:absolute; transform:translateY(-100%); right:0; top:0">Close</button>
+            <button onclick="saveImage(document.getElementById('screenshotImg').src)">Save Image</button>
         </div>
     </div>
     <div id="confirmUrlDiv" style="display: none;" class="ctaDiv">
@@ -280,6 +281,17 @@
                 window.newUrlString = url;
                 document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url;                
             }
+
+        function saveImage(dateUrl) {
+            const link = document.createElement('a');
+            const today = new Date();
+            const dateString = today.toISOString();
+
+            link.href = dateUrl;
+            link.download = `Screenshot ${dateString}.png`;
+            link.click();
+        }
+
             window.ITRACKER_GLOBALS = {
                 //place global settings here
                 INTERNAL_SMOOTHFACTOR_POS: .075,
