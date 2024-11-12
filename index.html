@@ -264,12 +264,17 @@
                 document.getElementById("errorDiv").style.display = "flex";
                 document.getElementById("errorText").innerHTML = error;
             }
-            function ShowScreenshot(dataUrl){
-                document.getElementById("screenshotDiv").style.display = "flex";
-                document.getElementById("screenshotImg").src = dataUrl;
-                document.getElementById("screenshotImg").style.width = "80vw";
-                document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";
-            }
+        function ShowScreenshot(dataUrl) {
+
+            const today = new Date();
+            const dateString = today.toISOString();
+
+            document.getElementById("screenshotDiv").style.display = "flex";
+            document.getElementById("screenshotImg").src = dataUrl;
+            document.getElementById("screenshotImg").style.width = "80vw";
+            document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";
+            document.getElementById("screenshotImg").alt = `Screenshot taken on ${dateString}`;
+        }
             function ShowConfirmUrl(url){
                 document.getElementById("confirmUrlDiv").style.display = "flex";
                 window.newUrlString = url;
