@@ -6,7 +6,7 @@
     <title>Unity WebGL Player | Malaysia Muzium Negara WebAR</title>
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
-        html{
+        html {
             height: -webkit-fill-available;
         }
         body {
@@ -34,22 +34,24 @@
 </head>
 <body>
     <!--IMAGETARGETS-->
-    <imagetarget id='bear' src='targets/bear.png'></imagetarget>
-    <imagetarget id='bfly' src='targets/bfly.png'></imagetarget>
-    <imagetarget id='flower' src='targets/flower.png'></imagetarget>
-    <imagetarget id='lady' src='targets/lady.png'></imagetarget>
-    <imagetarget id='reel' src='targets/reel.png'></imagetarget>
-    <imagetarget id='rmn' src='targets/rmn.png'></imagetarget>
-    <imagetarget id='Bendera Pertama Malaysia' src='targets/Bendera Pertama Malaysia.png'></imagetarget>
-    <imagetarget id='Cerek tembaga' src='targets/Cerek tembaga.png'></imagetarget>
-    <imagetarget id='Cop Mohor Kerajaan-kerajaan Negeri Patani 1309H' src='targets/Cop Mohor Kerajaan-kerajaan Negeri Patani 1309H.png'></imagetarget>
-    <imagetarget id='Dinar Emas Kelantan' src='targets/Dinar Emas Kelantan.png'></imagetarget>
-    <imagetarget id='Flintlock Pistol' src='targets/Flintlock Pistol.png'></imagetarget>
-    <imagetarget id='Pending' src='targets/Pending.png'></imagetarget>
-    <imagetarget id='PeralatanBatu Paleolitik' src='targets/PeralatanBatu Paleolitik.png'></imagetarget>
-    <imagetarget id='Tengkolok Dendam Tak Sudah' src='targets/Tengkolok Dendam Tak Sudah.png'></imagetarget>
-    <imagetarget id='Arca Buddha Duduk' src='targets/relics_1.png'></imagetarget>
-    <imagetarget id='Loceng Gangsa Dong Son' src='targets/img_02.png'></imagetarget>
+		<imagetarget id='bear' src='targets/bear.png'></imagetarget>
+		<imagetarget id='bfly' src='targets/bfly.png'></imagetarget>
+		<imagetarget id='flower' src='targets/flower.png'></imagetarget>
+		<imagetarget id='lady' src='targets/lady.png'></imagetarget>
+		<imagetarget id='reel' src='targets/reel.png'></imagetarget>
+		<imagetarget id='rmn' src='targets/rmn.png'></imagetarget>
+		<imagetarget id='Bendera Pertama Malaysia' src='targets/Bendera Pertama Malaysia.png'></imagetarget>
+		<imagetarget id='Cerek tembaga' src='targets/Cerek tembaga.png'></imagetarget>
+		<imagetarget id='Cop Mohor Kerajaan-kerajaan Negeri Patani 1309H' src='targets/Cop Mohor Kerajaan-kerajaan Negeri Patani 1309H.png'></imagetarget>
+		<imagetarget id='Dinar Emas Kelantan' src='targets/Dinar Emas Kelantan.png'></imagetarget>
+		<imagetarget id='Flintlock Pistol' src='targets/Flintlock Pistol.png'></imagetarget>
+		<imagetarget id='Pending' src='targets/Pending.png'></imagetarget>
+		<imagetarget id='PeralatanBatu Paleolitik' src='targets/PeralatanBatu Paleolitik.png'></imagetarget>
+		<imagetarget id='Tengkolok Dendam Tak Sudah' src='targets/Tengkolok Dendam Tak Sudah.png'></imagetarget>
+		<imagetarget id='Arca Buddha Duduk' src='targets/relics_1.png'></imagetarget>
+		<imagetarget id='Loceng Gangsa Dong Son' src='targets/img_02.png'></imagetarget>
+		<imagetarget id='Arca Buddha Duduk_QR' src='targets/1x2VH.jpg'></imagetarget>
+		<imagetarget id='Pending_QR' src='targets/1xdug.jpg'></imagetarget>
 
     <video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>
     <!-- <video id="webcam-video" muted autoplay playsinline style="width:100%; height:100%; object-fit:cover; position:absolute"></video> -->
@@ -77,10 +79,10 @@
             <img id="screenshotImgIOS" src="" alt="screenshot" style="width:80vw; height:80vh">
             <div id="message"
                  style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
-            color: white; font-size: 16px; background-color: rgba(0, 0, 0, 0.6);
-            padding: 5px; border-radius: 5px; text-align: center; white-space: nowrap;
-            background-image: url('TemplateData/bear.png');
-            background-size: cover; background-position: center;">
+                color: white; font-size: 16px; background-color: rgba(0, 0, 0, 0.6);
+                padding: 5px; border-radius: 5px; text-align: center; white-space: nowrap;
+                background-image: url('TemplateData/bear.png');
+                background-size: cover; background-position: center;">
                 To save the image,<br>please long-press it and select Save Image.
             </div>
             <button onclick="document.getElementById('screenshotDiviOS').style.display = 'none';"
@@ -129,7 +131,6 @@
                 ShowError("Failed to initialize the experience.");
                 return;
             }
-
             await LoadWebcams();
             document.getElementById("startARButton").style.display = "block";
         }
@@ -141,7 +142,6 @@
         function StartAR() {
             canvas.style.width = window.innerWidth + "px";
             canvas.style.height = window.innerHeight + "px";
-
             document.getElementById("startARDiv").style.display = "none";
             createUnityInstance(document.querySelector("#unity-canvas"), {
                 dataUrl: "Build/Build Test.data.unityweb",
@@ -166,7 +166,7 @@
             loadingBar.style.display = "block";
         }
         //Set Facing Mode here ('environment', 'user', '')
-        window.unityFacingMode = "environment"
+		window.unityFacingMode = "environment"
         window.WEBCAM_SETTINGS = {
             video: {
                 facingMode: unityFacingMode,
@@ -233,7 +233,6 @@
                         //back and front
                         camDevices.push(mediaDevice);
                     }
-
                     ctr++;
                 }
             });
@@ -285,13 +284,10 @@
             document.getElementById("errorText").innerHTML = error;
         }
         function ShowScreenshot(dataUrl) {
-
             var screenShotDiv = isiOS() ? "screenshotDiviOS" : "screenshotDiv";
             var screenshotImgId = isiOS() ? "screenshotImgIOS" : "screenshotImg";
-
             document.getElementById(screenShotDiv).style.display = "flex";
             var screenshotImg = document.getElementById(screenshotImgId);
-
             screenshotImg.src = dataUrl;
             screenshotImg.style.width = "80vw";
             screenshotImg.style.height = 80 / window.innerWidth * window.innerHeight + "vw";
@@ -305,22 +301,18 @@
             var userAgent = navigator.userAgent || navigator.vendor;
             return /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
         }
-
         function saveImage(dateUrl) {
             const link = document.createElement('a');
             const today = new Date();
             const dateString = today.toISOString();
-
             link.href = dateUrl;
-            link.download = `Screenshot ${dateString}.png`;
+            link.download = `Screenshot ${dateString}`;
             link.click();
         }
-
         window.ITRACKER_GLOBALS = {
             //place global settings here
             INTERNAL_SMOOTHFACTOR_POS: .075,
         }
-
     </script>
 </body>
 </html>
